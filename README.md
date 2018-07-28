@@ -49,15 +49,15 @@ The car drives within 50 mph during the driving.
 
 The car never reach the max acceleration (10m/s^2) and jerk (10m/s^3) during driving.
 
-####Car does not have collisions
+4.Car does not have collisions
 
 The car didn't collide other cars during testing.
 
-4.The car stays in its lane, except for the time between changing lanes.
+5.The car stays in its lane, except for the time between changing lanes.
 
 This item could be satisfied during testing.
 
-5.the car is able to change lanes
+6.the car is able to change lanes
 
 This item could be satisfied during testing.
 
