@@ -35,17 +35,17 @@ the project could be complied and built completely with Cmake and make, without 
 
 ###Valid Trajectories
 
-####The car is able to drive at least 4.32 miles without incident.
+1.The car is able to drive at least 4.32 miles without incident.
 
 Here I tested with the simlator and the car could drive at least 7.65 miles without indicent.
 
 ![Driving](images/driving.png)
 
-####The car drives according to the speed limit.
+2.The car drives according to the speed limit.
 
 The car drives within 50 mph during the driving.
 
-####Max Acceleration and Jerk are not Exceeded.
+3.Max Acceleration and Jerk are not Exceeded.
 
 The car never reach the max acceleration (10m/s^2) and jerk (10m/s^3) during driving.
 
@@ -53,11 +53,11 @@ The car never reach the max acceleration (10m/s^2) and jerk (10m/s^3) during dri
 
 The car didn't collide other cars during testing.
 
-####The car stays in its lane, except for the time between changing lanes.
+4.The car stays in its lane, except for the time between changing lanes.
 
 This item could be satisfied during testing.
 
-#### the car is able to change lanes
+5.the car is able to change lanes
 
 This item could be satisfied during testing.
 
@@ -66,18 +66,20 @@ Based on the orginal code provided by tutors in classroom, the algorithm was in 
 
 The implementation could be described as:
 
-####1. find other cars from sensor fusion [line 253 to line 296](./src/main.cpp#L253)
+1.find other cars from sensor fusion [line 253 to line 296](./src/main.cpp#L253)
+
 The algorithm extracted the other car's s and d from sensor fusion, and judge that: Is there a blocking car in front of us, or a blocking car prevent us to change left or right.
 
 From the d value of other cars, we can find out which lane is it on, and to check it's s and ego car's s value, we can judget whether it will prevent us go straight, change left or change right. We choose 30m as the safety distance.
 
-####2. Manuver Logic [line 299 to line 314](./scr/main.cpp#L299)
+2.Manuver Logic [line 299 to line 314](./scr/main.cpp#L299)
 
 Based on the previous step, we have found which lane is safe to drive, so in this section, we just change to the safe lane, if all lanes are not safe, we will keep on current lane and slow down. 
 
 And here I set the boundary speed, to keep ego car not exceed the speed limit and not stop totally (on highway it's also not safe).
 
-####3. Trajectory generation[line 325 to line 434](./scr/main.cpp#L325)
+3.Trajectory generation[line 325 to line 434](./scr/main.cpp#L325)
+
 This code section are almost same with the code provide by the tutor in the class.
 
 To be brief, we use last two points of the previous trajectory in conjunction three points at a far distance to initialize the spline calculation. Then caculate the rest points by spline to make the trajectory more smooth.
